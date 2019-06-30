@@ -37,10 +37,10 @@ Namespace GGBackOffice
 
             conn.Open()
 
-            strSQL = "SELECT client.invdept, client.invadd1, client.invadd2, client.invcity,  client.invstate, " & _
-                    "client.invzip, client.charge_int, client.invcontact, adjust.* FROM adjust " & _
-                    "INNER JOIN client ON client.clcode=adjust.clcode WHERE invnumber BETWEEN " & lngStartNo & " AND " & lngEndNo & _
-                    "AND adjust.site_id=101 " & _
+            strSQL = "SELECT client.invdept, client.invadd1, client.invadd2, client.invcity,  client.invstate, " &
+                    "client.invzip, client.charge_int, client.invcontact, 0 as thispo, adjust.* FROM adjust " &
+                    "INNER JOIN client ON client.clcode=adjust.clcode WHERE invnumber BETWEEN " & lngStartNo & " AND " & lngEndNo &
+                    "AND adjust.site_id=101 " &
                     "ORDER BY invnumber, lname "
 
             cmd.CommandText = strSQL

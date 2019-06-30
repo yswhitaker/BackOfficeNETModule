@@ -217,7 +217,13 @@ Namespace GGBackOffice
 
 
             'NET DAYS
-            lblText = New Label("Net " & objInvoice.LateDays & " days", intDateCol, intCurrentY, 100, 100)
+            If objInvoice.LateDays = 0 Then
+                lblText = New Label("Net due Upon Presentation", intDateCol, intCurrentY, 100, 100)
+            Else
+                lblText = New Label("Net " & objInvoice.LateDays & " days", intDateCol, intCurrentY, 100, 100)
+            End If
+
+
             lblText.FontSize = 10
             MyPage.Elements.Add(lblText)
             lblText = Nothing
@@ -355,7 +361,13 @@ Namespace GGBackOffice
             intCurrentY = intCurrentY + 12
 
             'NET DAYS
-            lblText = New Label("Net " & objInvoice.LateDays & " days", intDateCol, intCurrentY, 100, 100)
+            If objInvoice.LateDays = 0 Then
+                lblText = New Label("Net due Upon Presentation", intDateCol, intCurrentY, 100, 100)
+            Else
+                lblText = New Label("Net " & objInvoice.LateDays & " days", intDateCol, intCurrentY, 100, 100)
+            End If
+
+
             lblText.FontSize = 10
             MyPage.Elements.Add(lblText)
             lblText = Nothing
@@ -492,7 +504,13 @@ Namespace GGBackOffice
             intCurrentY = intCurrentY + 12
 
             'NET DAYS
-            lblText = New Label("Net " & objInvoice.LateDays & " days", intDateCol, intCurrentY, 100, 100)
+            If objInvoice.LateDays = 0 Then
+                lblText = New Label("Net due Upon Presentation", intDateCol, intCurrentY, 100, 100)
+            Else
+                lblText = New Label("Net " & objInvoice.LateDays & " days", intDateCol, intCurrentY, 100, 100)
+            End If
+
+
             lblText.FontSize = 10
             MyPage.Elements.Add(lblText)
             lblText = Nothing
@@ -3631,6 +3649,11 @@ Namespace GGBackOffice
                     lblText.FontSize = 10
                     MyPage.Elements.Add(lblText)
                     lblText = Nothing
+                Else
+                    lblText = New Label("TERMS ARE NET DUE UPON PRESENTATION", 155, intCurrentY, 300, 100)
+                    lblText.FontSize = 10
+                    MyPage.Elements.Add(lblText)
+                    lblText = Nothing
                 End If
             End If
 
@@ -5127,7 +5150,12 @@ errhandler:
 
 
             'NET DAYS
-            lblText = New Label("Net " & objInvoice.LateDays & " days", intDateCol, intCurrentY, 100, 100)
+            If objInvoice.LateDays = 0 Then
+                lblText = New Label("Net due Upon Presentation", intDateCol, intCurrentY, 100, 100)
+            Else
+                lblText = New Label("Net " & objInvoice.LateDays & " days", intDateCol, intCurrentY, 100, 100)
+            End If
+
             lblText.FontSize = 10
             MyPage.Elements.Add(lblText)
             lblText = Nothing
